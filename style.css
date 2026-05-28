@@ -1,0 +1,93 @@
+/* Tổng thể trang web */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+/* Yêu cầu 1: Nút Skip to Main Content ẩn đi, chỉ hiện khi Focus (nhấn Tab) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #bf360c;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+}
+.skip-link:focus {
+    top: 10px;
+}
+
+/* Yêu cầu 2 & 7: Trang trí Menu Navigation bằng FLEXBOX */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #003366;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* Yêu cầu 4 & 5: Trang trí Ảnh bằng BOX MODEL (border, padding, border-radius) */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #ffffff;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Yêu cầu 6: Định dạng hàng loạt ảnh bằng GRID (Có ít nhất 2 cột) */
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia làm 2 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các ô lưới */
+    padding: 20px;
+}
+
+/* Yêu cầu 8: Hiệu ứng HOVER thú vị khi di chuột vào ảnh */
+img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+    border-color: #003366;
+}
+
+/* Yêu cầu 9: Sử dụng selector nth-child để tạo sự khác biệt */
+/* Làm cho các ảnh ở vị trí chẵn có góc bo tròn lớn hơn hẳn */
+img:nth-child(even) {
+    border-radius: 30px;
+}
+
+/* Định dạng các phần bổ sung */
+header h1 {
+    text-align: center;
+    color: #003366;
+}
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
